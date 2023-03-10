@@ -34,9 +34,9 @@ The dashboard was implemented using the Bokeh library, which is a Python package
 ```
   run the fine-tuning-mobile-bert.ipynb and save the weights to load them in process_tweets.py file 
   python cathiedwood_database.py 
-  python ylecun.py 
-  python taylorlorenz.py 
-  python process_tweets.py 
+  python ylecun_database.py 
+  python taylorlorenz_database.py 
+  python process_tweets.py
   python API_server.py 
   bokeh serve --allow-websocket-origin=* ~/data
 ```
