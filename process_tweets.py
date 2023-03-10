@@ -263,13 +263,13 @@ while True:
     account_followers = df_threads[['conversationId', 'followers count']]
     sum_followers = account_followers.merge(audience_follower, on='conversationId', how='left')
     sum_followers = sum_followers.replace({np.nan: 0})
-    sum_followers['sum_followers'] = sum_followers['followers count_x'] + sum_followers['followers count_y']
+    sum_followers['sum_followers'] = sum_followers['followers count_x'] + 2 * sum_followers['followers count_y']
     sum_followers = sum_followers[['conversationId', 'sum_followers']]
     sum_followers['sum_followers'] = sum_followers['sum_followers'].astype('int64')
     audience_thread = audience_thread.merge(sum_followers, on='conversationId', how='left')
     df_threads = df_threads.merge(sum_followers, on='conversationId', how='left')
     audience_sentiment = audience_thread.groupby('conversationId')['sentiment'].mean().reset_index()
-    df_threads['weighted_sent'] = df_threads['sentiment_thread'] * (df_threads['followers count'] / df_threads['sum_followers'] )
+    df_threads['weighted_sent'] = df_threads['sentiment_thread'] * ( (2 * df_threads['followers count']) / df_threads['sum_followers'] )
     audience_thread['weighted_sent_audience'] = audience_thread['sentiment'] * (audience_thread['followers count'] / audience_thread['sum_followers'] )
     audience_weighted_sentiment = audience_thread.groupby('conversationId')['weighted_sent_audience'].sum().reset_index()
     df_threads = df_threads.merge(audience_weighted_sentiment, on='conversationId', how='left')
