@@ -1,1 +1,34 @@
+{% extends base %}
 
+{% block postamble %}
+  <style>
+    h1 {
+      margin: 2em 0 0 0;
+      color: #2e484c;
+      font-family: 'Julius Sans One', sans-serif;
+      font-size: 1.4em;
+      text-transform: uppercase;
+    }
+    p {
+      font: "Libre Baskerville", sans-serif;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  </style>
+{% endblock %}
+
+{% block contents %}
+  <div>
+    <h1>Data Dashboard </h1>
+
+    <ul style="list-style-type:circle">
+      <li> Description <code>Tab:</code> returns AI generated two paragraph summary description of tracked accounts.</li>
+      <li> Audience <code>Tab:</code> returns information about the audience for a user's account.</li>
+      <li> Accounts <code>Tab:</code> returns list of all tracked accounts and overall sentiment score.</li>
+      <li> Tweets <code>Tab:</code> returns tracked accounts conversation threads since start.</li>
+      <li> Sentiment <code>Tab:</code> returns sentiment score of Each thread and overall score for replies</li>
+
+    </ul>
+  </div>
+  {{ super() }}
+{% endblock %}
