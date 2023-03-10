@@ -22,7 +22,7 @@ You can use this link to access the API http://twitterchallenge.ir:5000/
 ```
   
 ## Data Dashboard:
-To access the dashboard, please follow [this link](http://twitterchallenge.ir:5006/Data)
+To access the dashboard, please follow [this link](http://twitterchallenge.ir:5006/data)
     
 The dashboard was implemented using the Bokeh library, which is a Python package that allows for the creation of interactive visualizations and applications in web browsers. The dashboard consists of several tabs, each of which displays a different set of data.
 
