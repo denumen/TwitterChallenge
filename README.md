@@ -8,6 +8,22 @@ The list of accounts:
 - @cathiedwood
 - @ylecun
 
+# Process
+- a. Data gathering and preprocessing 
+    - data access using snscraper
+    - data transformation
+ - b. Model building and evaluation 
+    - Create model using pretrained MobileBert 
+    - fine-tuning the model to have better accuracy on twitter data
+    - evaluate model and deployment
+ - c. Knowledge discovery and information extraction
+ - d. Knowledge representation
+    - using API Endpoint and bokeh dashboard to represent the knowledge
+<p align="center" style="background-color:white">
+  <img src="http://89.23.110.199/Flowchart2.png" title="your LaTeX formula" width="1000" height="500" />
+</p>
+
+
 **API Endpoints:**
 - API endpoint is accessa:
     - /accounts: return a json list of all tracked accounts:
