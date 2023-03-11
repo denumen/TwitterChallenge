@@ -32,12 +32,21 @@ The dashboard was implemented using the Bokeh library, which is a Python package
 ## Source Code:  
   to reproduce the results in the server you can run the following scripts and add them as a service to your server:
 ```
+  # Using tensorflow and MobileBert pretrained transformer to fine-tune on a sentiment140 twitter dataset 
   run the fine-tuning-mobile-bert.ipynb and save the weights to load them in process_tweets.py file 
-  python cathiedwood_database.py 
+    
+  # each of these 3 returns two datasets, one for the tweets and replies of the tracked account and one for audience replies  
+  python cathiedwood_database.py  
   python ylecun_database.py 
   python taylorlorenz_database.py 
+    
+  # this file process all datasets we saved and use fine-tune MobileBert to predict sentiments of tweets in real-time 
   python process_tweets.py
+    
+  # API Endpoint using Flask
   python API_server.py 
+    
+  # Website to show the processed data using bokeh 
   bokeh serve --allow-websocket-origin=* ~/data
 ```
   ### Sentiment analyze
